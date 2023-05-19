@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import "../global.css";
 import "axios";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Fade from "@mui/material/Fade";
 
 const columns: GridColDef[] = [
@@ -44,6 +44,7 @@ interface Table {
 function Interfaces() {
   const [data, setData] = React.useState<Table[]>([]);
   const [open, setOpen] = React.useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [Transition, setTransition] = React.useState<typeof Fade>(Fade);
 
   const navigate = useNavigate();
