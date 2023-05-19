@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TextField, FormControl, Button, Snackbar } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Fade from "@mui/material/Fade";
 
 function Form() {
@@ -10,6 +10,20 @@ function Form() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [Transition, setTransition] = useState<typeof Fade>(Fade);
+  const [message, setMessage] = useState("Enter all the Details please!");
+
+  const Location = useLocation();
+
+  useEffect(() => {
+    if (Location.state) {
+      if (Location.state.redirected) {
+        setMessage("Please login First");
+        setOpen(true);
+        setTransition(Fade);
+        window.history.replaceState({}, document.title);
+      }
+    }
+  }, []);
 
   const handleNameChange = (event: {
     target: { value: React.SetStateAction<string> };
@@ -33,9 +47,14 @@ function Form() {
     event.preventDefault();
 
     if (name === "" || phone === "" || email === "") {
+      setMessage("Enter all details please!");
       setOpen(true);
       setTransition(Fade);
     } else {
+      localStorage.setItem(
+        "authentication",
+        JSON.stringify([name, email, phone])
+      );
       navigate("/interfaces");
     }
   };
@@ -85,7 +104,7 @@ function Form() {
         open={open}
         onClose={handleClose}
         TransitionComponent={Transition}
-        message="Enter all the Details please!"
+        message={message}
         key={Transition.name}
       />
     </div>
