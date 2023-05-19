@@ -1,0 +1,18 @@
+div {
+  width: 90%;
+  margin: auto;
+}
+
+body {
+  background-color: white;
+}
+
+label span {
+  color: black;
+}
+
+a {
+  font-weight: bolder;
+  font-size: 30px;
+  padding: 15px;
+}
