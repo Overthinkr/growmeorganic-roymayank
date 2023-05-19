@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { TextField, FormControl, Button, Snackbar } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import Slide, { SlideProps } from "@mui/material/Slide";
-import Grow, { GrowProps } from "@mui/material/Grow";
 import Fade from "@mui/material/Fade";
 
 function Form() {
@@ -11,9 +9,7 @@ function Form() {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
-  const [Transition, setTransition] = useState<
-    typeof Slide | typeof Grow | typeof Fade
-  >(Fade);
+  const [Transition, setTransition] = useState<typeof Fade>(Fade);
 
   const handleNameChange = (event: {
     target: { value: React.SetStateAction<string> };

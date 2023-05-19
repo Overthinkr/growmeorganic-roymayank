@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent } from "react";
 import Box from "@mui/material/Box";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
