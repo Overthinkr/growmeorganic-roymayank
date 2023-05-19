@@ -1,11 +1,9 @@
 import * as React from "react";
-import { Snackbar } from "@mui/material";
 import Box from "@mui/material/Box";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import "../global.css";
 import "axios";
 import { Link, useNavigate } from "react-router-dom";
-import Fade from "@mui/material/Fade";
 
 const columns: GridColDef[] = [
   {
