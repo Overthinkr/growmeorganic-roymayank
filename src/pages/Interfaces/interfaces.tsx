@@ -43,17 +43,11 @@ interface Table {
 
 function Interfaces() {
   const [data, setData] = React.useState<Table[]>([]);
-  const [open, setOpen] = React.useState(false);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [Transition, setTransition] = React.useState<typeof Fade>(Fade);
 
   const navigate = useNavigate();
   if (localStorage.getItem("authentication") === null) {
     navigate("/", { state: { redirected: true } });
   }
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   React.useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
@@ -85,13 +79,6 @@ function Interfaces() {
           disableRowSelectionOnClick
         />
       </Box>
-      <Snackbar
-        open={open}
-        onClose={handleClose}
-        TransitionComponent={Transition}
-        message="You are not logged in"
-        key={Transition.name}
-      />
     </div>
   );
 }
