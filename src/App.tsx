@@ -1,8 +1,8 @@
 import "./App.css";
-import Form from "./components/home";
+import Form from "./pages/Home/home";
 import { Route, Routes } from "react-router-dom";
-import Interfaces from "./components/interfaces";
-import Departments from "./components/departments";
+import Interfaces from "./pages/Interfaces/interfaces";
+import Departments from "./pages/Departments/departments";
 
 function App() {
   return (

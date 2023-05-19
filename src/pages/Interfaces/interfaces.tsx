@@ -1,7 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
-import "./new.css";
+import "../global.css";
 import "axios";
 import { Link } from "react-router-dom";
 
